@@ -29,5 +29,19 @@ namespace WebPOSAPI.Controllers
             })
             .ToArray();
         }
+
+        [HttpPost(Name = "PostWeatherForecast")]
+        public Person Post(Person person)
+        {
+            person.Name = person.Name.ToUpper();
+            return person;
+        }
+
+    }
+
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
     }
 }
